@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lets Have Some Fun</title>
+
+    <style>
+        html, body {
+  height: 100%;
+  margin: 0;
+}
+
+.container {
+  height: 100%;
+  position: relative;
+  border: 3px solid red;
+}
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+.button {
+  background-color: #de0707; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+  <div class="center">
+      <form action="{% url 'rotating' %}" method='POST'>
+        {% csrf_token %}
+        <button class="button" type="submit">Centered Button</button>
+          </form>
+  </div>
+</div>
+</body>
+</html>
